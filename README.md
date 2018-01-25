@@ -18,7 +18,23 @@ TIMING could boost immunotherapy. For example, we use TIMING to quantify the kil
 For more details, see our previous [Bioinformatics paper](https://academic.oup.com/bioinformatics/article/31/19/3189/212047)
 
 ## How about TIMING2?
+TIMING2 is all about the updates and improvements of TIMING pipeline, the software part of the whole TIMING protocol. Compared with TIMING pipeline, we have the following key improvements:
 
+(1) A unified TIMING2-pipeline wrapped up in Jupyter Notebook, where user can run different steps easily;
+
+(2) Updated Modules, TIMING2-pipeline have several modules in TIMING pipeline updated, which are faster, easier and more robust
+    * [EZ_Unmixer](https://github.com/troylhy1991/EZ_Unmixer), we use an interactive tool EZ_Unmixer to calculate the spectral leakage ratio \lambda, and do linear subtraction with \lambda using the pipeline;
+    
+    * Nanowell detection and cropping using faster r-cnn, a more robust nanowell detection module using state-of-art object detector based on convolutional neural networks; fully automatic and no input parameter configuration;
+    
+    * GPU-accelerated Cell segmentation module
+    
+(3) New Modules, TIMING2 has several new modules which is not included in TIMING,
+    * Cell death detection without fluorescent cell death marker, using convolutional neural networks based image classifier, TIMING2 is able to detect cell death with 87% accuracy by looking at phase contrast channel;
+    
+    * TIMING2-board, a visualization and re-editing system
+    
+(4) Cross-Platform compatibility
 
 ## Requirements:
 
@@ -33,3 +49,4 @@ For more details, see our previous [Bioinformatics paper](https://academic.oup.c
 
 
 ## Contact:
+ Hengyang Lu: hlu9@uh.edu
