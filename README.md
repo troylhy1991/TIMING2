@@ -1,5 +1,5 @@
 # TIMING2
-![](https://github.com/troylhy1991/TIMING2/appendix/TIMING.gif)
+![](https://github.com/troylhy1991/TIMING2/blob/master/appendix/TIMING.gif)
 ## What is TIMING?
 TIMING is the acronym for Time-lapse Imaging Microscopy in Nanowell Grids. It is a high-throughput single-cell imaging and image processing protocol developed and maintained by [Single-Cell Lab](http://singlecell.chee.uh.edu/) and [Farsight Group](http://www.farsight-toolkit.org/wiki/Main_Page) at University of Houston, Houston, Texas.
 
