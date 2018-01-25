@@ -1,5 +1,5 @@
 
-## What is TIMING?
+# What is TIMING?
 TIMING is the acronym for Time-lapse Imaging Microscopy in Nanowell Grids. It is a high-throughput single-cell imaging and image processing protocol developed and maintained by [Single-Cell Lab](http://singlecell.chee.uh.edu/) and [Farsight Group](http://www.farsight-toolkit.org/wiki/Main_Page) at University of Houston, Houston, Texas.
 
 In TIMING, we put cells in controlled microenvironment, nanowells. The nanowells have the size of 50 um by 50 um, and in one nanowell, there are usually less than 10 cells in total. Different cells are stained with different fluorescent bio-markers. We do 4D imaging (X,Y,w,t) of the cells and analyze their interactions.
@@ -18,7 +18,7 @@ TIMING could boost immunotherapy. For example, we use TIMING to quantify the kil
 
 For more details, see our previous [Bioinformatics paper](https://academic.oup.com/bioinformatics/article/31/19/3189/212047)
 
-## How about TIMING2?
+# How about TIMING2?
 TIMING2 is all about the updates and improvements of TIMING pipeline, the software part of the whole TIMING protocol. Compared with TIMING pipeline, we have the following key improvements:
 
 (1) A unified TIMING2-pipeline wrapped up in Jupyter Notebook, where user can run different steps easily;
@@ -49,13 +49,13 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
   <img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg" width="400">
 </p>
 
-## Requirements:
+# Requirements:
 
 * 64-bit computer with at least 2GHz processor running Windows, Linux or Mac
 * CUDA-enabled GPU, memory >= 4 GB recommended
 * Hard drive storage >= 2TB, solid-state hard drive strongly recommended
 
-## Installation:
+# Installation:
 
 (1) Download this repository and put the folder say C:\Users\TIMING2\
 
@@ -75,11 +75,22 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
 (7) Have a cup of coffee, will be ready in several minutes.
 
-## Usage:
+# Usage:
 
+(1) Download the [TEST Dataset](), and put it in the folder, say C:\Users\TIMING2_Datasets_Raw\; also, make another directory for the results C:\Users\TIMING2_Datasets_Results\;
 
-## Troubleshooting:
-
-
-## Contact:
+(2) Run [TIMING2-pipeline Jupyter Notebook](https://github.com/troylhy1991/TIMING2/blob/master/TIMING_II_PIPELINE_DEMO_Updated_1.ipynb), make sure to change the following parameters to run the test:
+ 
+ * CORE_NUMBER = # of CORES available on your machine
+ 
+ * TIMING_II_Home = "C:\\Users\\TIMING2\\"
+ 
+ * Data_Raw_DIR = "C:\\Users\\TIMING2_Datasets_Raw\\"
+ 
+ * Data_DIR = "C:\\Users\\TIMING2_Datasets_Results\\"
+ 
+ (3) Visualize the results; Open a new Anaconda Prompt, activate the visualization and editing environment by typing activate TIMING2-
+board, change directory to typing cd C:\\Users\\TIMING2\\timing2-viewer\\2.0\\. Start the visualization system typing python TIMING_Main.py, and you will see a small widget window popping up.
+ 
+# Contact:
  Hengyang Lu: hlu9@uh.edu
