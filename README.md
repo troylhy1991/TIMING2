@@ -24,11 +24,11 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
 (2) Updated Modules, TIMING2-pipeline have several modules in TIMING pipeline updated, which are faster, easier and more robust
     
-    (a) [EZ_Unmixer](https://github.com/troylhy1991/EZ_Unmixer), we use an interactive tool EZ_Unmixer to calculate the spectral leakage ratio \lambda, and do linear subtraction with \lambda using the pipeline;
+ * [EZ_Unmixer](https://github.com/troylhy1991/EZ_Unmixer), we use an interactive tool EZ_Unmixer to calculate the spectral leakage ratio \lambda, and do linear subtraction with \lambda using the pipeline;
     
-    (b) Nanowell detection and cropping using faster r-cnn, a more robust nanowell detection module using state-of-art object detector based on convolutional neural networks; fully automatic and no input parameter configuration;
+ * Nanowell detection and cropping using faster r-cnn, a more robust nanowell detection module using state-of-art object detector based on convolutional neural networks; fully automatic and no input parameter configuration;
     
-    (c) GPU-accelerated Cell segmentation module
+ * GPU-accelerated Cell segmentation module
     
 (3) New Modules, TIMING2 has several new modules which is not included in TIMING,
     
