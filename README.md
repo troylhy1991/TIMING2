@@ -1,6 +1,6 @@
 
 # What is TIMING?
-TIMING is the acronym for Time-lapse Imaging Microscopy in Nanowell Grids. It is a high-throughput single-cell imaging and image processing protocol developed and maintained by [Single-Cell Lab](http://singlecell.chee.uh.edu/), [Farsight Group](http://www.farsight-toolkit.org/wiki/Main_Page) and [STIM Laboratory](http://stim.ee.uh.edu/) at University of Houston, Houston, Texas.
+TIMING is the acronym for Time-lapse Imaging Microscopy in Nanowell Grids. It is a high-throughput single-cell imaging and image processing protocol developed and maintained by [Single-Cell Lab](http://singlecell.chee.uh.edu/), [FARSight Group](http://www.farsight-toolkit.org/wiki/Main_Page) and [STIM Laboratory](http://stim.ee.uh.edu/) at University of Houston, Houston, Texas.
 
 In TIMING, we put cells in controlled microenvironment, nanowells. The nanowells have the size of 50 um by 50 um, and in one nanowell, there are usually less than 10 cells in total. Different cells are stained with different fluorescent bio-markers. We do 4D imaging (X,Y,w,t) of the cells and analyze their interactions.
 
