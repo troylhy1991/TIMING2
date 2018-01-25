@@ -1,5 +1,4 @@
-# TIMING2
-![](https://github.com/troylhy1991/TIMING2/blob/master/appendix/TIMING.JPG)
+
 ## What is TIMING?
 TIMING is the acronym for Time-lapse Imaging Microscopy in Nanowell Grids. It is a high-throughput single-cell imaging and image processing protocol developed and maintained by [Single-Cell Lab](http://singlecell.chee.uh.edu/) and [Farsight Group](http://www.farsight-toolkit.org/wiki/Main_Page) at University of Houston, Houston, Texas.
 
@@ -12,6 +11,8 @@ The nanowells are fabricated on PDMS slides and in one slide there are approxima
   * Cell Segmentation
   * Cell Tracking
   * Cell Feature Calculation
+
+![](https://github.com/troylhy1991/TIMING2/blob/master/appendix/TIMING.JPG)
 
 TIMING could boost immunotherapy. For example, we use TIMING to quantify the killing efficacy of CAR T-cells (Chimeric Antigen Receptor T Cell, a geneticlly modified human T cell) and implement the optimal reprogrammed CAR T-cell for a specific patient.
 
@@ -32,9 +33,9 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
     
 (3) New Modules, TIMING2 has several new modules which is not included in TIMING,
     
-    (a) Cell death detection without fluorescent cell death marker, using convolutional neural networks based image classifier, TIMING2 is able to detect cell death with 87% accuracy by looking at phase contrast channel;
+ * Cell death detection without fluorescent cell death marker, using convolutional neural networks based image classifier, TIMING2 is able to detect cell death with 87% accuracy by looking at phase contrast channel;
     
-    (b) TIMING2-board, a visualization and re-editing system
+ * TIMING2-board, a visualization and re-editing system
     
 (4) Cross-Platform compatibility
 
