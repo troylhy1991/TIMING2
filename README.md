@@ -77,7 +77,7 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
 # Usage:
 
-(1) Download the [TEST Dataset](), and put it in the folder, say C:\Users\TIMING2_Datasets_Raw\; also, make another directory for the results C:\Users\TIMING2_Datasets_Results\;
+(1) Download the [TEST Dataset](https://drive.google.com/open?id=1SAnS3vMh7EpoRCJpZkm2d-t1bji1uvyj), and put it in the folder, say C:\Users\TIMING2_Datasets_Raw\; also, make another directory for the results C:\Users\TIMING2_Datasets_Results\;
 
 (2) Run [TIMING2-pipeline Jupyter Notebook](https://github.com/troylhy1991/TIMING2/blob/master/TIMING_II_PIPELINE_DEMO_Updated_1.ipynb), make sure to change the following parameters to run the test:
  
