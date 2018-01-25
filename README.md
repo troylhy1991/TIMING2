@@ -43,7 +43,7 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
 (4) Cross-Platform compatibility
 
-![Cross Platform](https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.JPG)  
+![Cross Platform](https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg)  
 
 ## Requirements:
 
