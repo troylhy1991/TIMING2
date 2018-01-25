@@ -29,7 +29,9 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
     
  * Nanowell detection and cropping using faster r-cnn, a more robust nanowell detection module using state-of-art object detector based on convolutional neural networks; fully automatic and no input parameter configuration;
 
-<img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/faster-rcnn.JPG" width="200" align="center">
+<p align="center">
+  <img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/faster-rcnn.JPG" width="400">
+</p>
 
  * GPU-accelerated Cell segmentation module
     
@@ -43,7 +45,9 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
 (4) Cross-Platform compatibility
 
-![Cross Platform](https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg)  
+<p align="center">
+  <img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg" width="300">
+</p>
 
 ## Requirements:
 
