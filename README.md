@@ -46,14 +46,34 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 (4) Cross-Platform compatibility
 
 <p align="center">
-  <img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg" width="300">
+  <img src="https://github.com/troylhy1991/TIMING2/blob/master/appendix/Platform.jpg" width="400">
 </p>
 
 ## Requirements:
 
+* 64-bit computer with at least 2GHz processor running Windows, Linux or Mac
+* CUDA-enabled GPU, memory >= 4 GB recommended
+* Hard drive storage >= 2TB, solid-state hard drive strongly recommended
 
 ## Installation:
 
+(1) Download this repository and put the folder say C:\Users\TIMING2\
+
+(2) Download auxiliary modules, and copy the folders to C:\Users\TIMING2\
+
+ * [timing2-crop](https://drive.google.com/open?id=1JF5EzTBGnQCUoflwbl9hmdB-1xd-6TII)
+ 
+ * [timing2-seg](https://drive.google.com/open?id=1wZuUeq0VIsF-GQw5F5OoMAe0iFbnwQe9)
+ 
+(3) Download and install [Anaconda](https://www.anaconda.com/download/?lang=en-us)
+
+(4) Create the environments for TIMING2-pipeline and TIMING2-board, open Anaconda Prompt, change to TIMING2 home directory C:\Users\TIMING2\, and type python setup_env.py
+
+(5) Set up TIMING2-pipeline, in the prompt, type activate TIMING2-pipeline, and then type python setup_timing2_pipeline.py
+
+(6) Open another Anaconda Prompt, change to TIMING2 home directory, type activate TIMING2-board, and then type python setup_timing2_board.py (independent from step 5)
+
+(7) Have a cup of coffee, will be ready in several minutes.
 
 ## Usage:
 
