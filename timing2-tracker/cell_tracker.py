@@ -28,6 +28,8 @@ class TIMING_Cell_Tracker:
         (w,h) = self.frames[0].shape
         self.frames_output = np.zeros(shape=(t,w,h), dtype=np.uint8)
         
+        self.frames_output[0] = self.frames[0] # The first frame is initialized
+        
         self.regions_0 = []
         self.regions_1 = []
         
