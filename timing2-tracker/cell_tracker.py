@@ -28,7 +28,12 @@ class TIMING_Cell_Tracker:
         (w,h) = self.frames[0].shape
         self.frames_output = np.zeros(shape=(t,w,h), dtype=np.uint8)
         
-        self.frames_output[0] = self.frames[0] # The first frame is initialized
+        i = 0
+        while(series[i] == 0):
+            i = i+1
+        if(i<t):
+            self.frames_output[i] = self.frames[i] # The first frame is initialized
+
         
         self.regions_0 = []
         self.regions_1 = []
@@ -132,7 +137,7 @@ class TIMING_Cell_Tracker:
     def approx_intprog(self, t0, t1):
         #N0 = self.frames[t0].max()
         #N1 = self.frames[t1].max()
-        self.regions_0 = skimage.measure.regionprops(self.frames[t0], intensity_image=self.frames[t0])
+        self.regions_0 = skimage.measure.regionprops(self.frames_output[t0], intensity_image=self.frames_output[t0])
         N0 = len(self.regions_0)
         
         self.regions_1 = skimage.measure.regionprops(self.frames[t1], intensity_image=self.frames[t1])
@@ -169,17 +174,15 @@ class TIMING_Cell_Tracker:
     def get_track(self):
         i = 0
         j = 1
-        while(j < self.t-1):
-            if(self.series[i] == 0):
+        while(i < self.t-1):
+            while(self.series[i] == 0):
                 i = i+1
-                continue
+            
             j = i+1
             
             while(self.series[j] == 0):
                 j = j + 1
             
-            if(j == self.t):
-                break
 
             mapping_temp = self.approx_intprog(i,j)
             
