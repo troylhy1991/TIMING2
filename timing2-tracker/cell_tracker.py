@@ -186,8 +186,18 @@ class TIMING_Cell_Tracker:
 
             mapping_temp = self.approx_intprog(i,j)
             
+            # init transition_mat_i
+            transition_mat_i = {}
+            N = len(mapping_temp)
+            for kk in range(1, N+1):
+                transition_mat_i[str(kk)] = kk
+            
             for link in mapping_temp:
-                self.frames_output[j][self.frames[j] == int(link[2])] = int(link[0])
+                #self.frames_output[j][self.frames[j] == int(link[2])] = int(link[0])
+                # update label
+                self.frames_output[j][self.frames[j] == int(link[2])] = transition_mat_i[link[0]]
+                # update transition_mat_i
+                transition_mat_i[link[2]] = transition_mat_i[link[0]]
                 
             i = j
           
