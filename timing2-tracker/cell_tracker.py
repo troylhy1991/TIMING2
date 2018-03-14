@@ -174,6 +174,13 @@ class TIMING_Cell_Tracker:
     def get_track(self):
         i = 0
         j = 1
+        
+        # init transition_mat_i
+        transition_mat_i = {}
+        N = len(mapping_temp)
+        for kk in range(1, N+1):
+            transition_mat_i[str(kk)] = kk
+        
         while(i < self.t-1):
             while(self.series[i] == 0):
                 i = i+1
@@ -186,11 +193,7 @@ class TIMING_Cell_Tracker:
 
             mapping_temp = self.approx_intprog(i,j)
             
-            # init transition_mat_i
-            transition_mat_i = {}
-            N = len(mapping_temp)
-            for kk in range(1, N+1):
-                transition_mat_i[str(kk)] = kk
+
             
             for link in mapping_temp:
                 #self.frames_output[j][self.frames[j] == int(link[2])] = int(link[0])
