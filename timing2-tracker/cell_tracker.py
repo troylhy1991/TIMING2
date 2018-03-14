@@ -206,7 +206,9 @@ class TIMING_Cell_Tracker:
                 self.frames_output[j][self.frames[j] == int(link[2])] = transition_mat_i[link[0]]
             # update transition_mat_i
             for link in mapping_temp:
-                transition_mat_i[link[2]] = transition_mat_i[link[0]]
+                transition_mat_i_temp = {}
+                transition_mat_i_temp[link[2]] = int(transition_mat_i[link[0]])
+            transition_mat_i = transition_mat_i_temp 
                 
             i = j
           
