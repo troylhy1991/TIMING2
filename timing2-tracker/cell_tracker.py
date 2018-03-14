@@ -33,7 +33,10 @@ class TIMING_Cell_Tracker:
             i = i+1
         if(i<t):
             self.frames_output[i] = self.frames[i] # The first frame is initialized
-
+        
+        # get the number of cells, assume it's constant
+        regions = skimage.measure.regionprops(self.frames_output[i], intensity_image=self.frames_output[i])
+        self.N = len(self.regions)
         
         self.regions_0 = []
         self.regions_1 = []
@@ -177,7 +180,9 @@ class TIMING_Cell_Tracker:
         
         # init transition_mat_i
         transition_mat_i = {}
-        N = len(mapping_temp)
+        #N = len(mapping_temp)
+        N = self.N
+        
         for kk in range(1, N+1):
             transition_mat_i[str(kk)] = kk
         
