@@ -199,7 +199,8 @@ class TIMING_Cell_Tracker:
                 #self.frames_output[j][self.frames[j] == int(link[2])] = int(link[0])
                 # update label
                 self.frames_output[j][self.frames[j] == int(link[2])] = transition_mat_i[link[0]]
-                # update transition_mat_i
+            # update transition_mat_i
+            for link in mapping_temp:
                 transition_mat_i[link[2]] = transition_mat_i[link[0]]
                 
             i = j
