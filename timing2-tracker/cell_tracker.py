@@ -36,7 +36,7 @@ class TIMING_Cell_Tracker:
         
         # get the number of cells, assume it's constant
         regions = skimage.measure.regionprops(self.frames_output[i], intensity_image=self.frames_output[i])
-        self.N = len(self.regions)
+        self.N = len(regions)
         
         self.regions_0 = []
         self.regions_1 = []
