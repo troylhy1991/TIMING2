@@ -27,20 +27,20 @@ class TIMING_Cell_Tracker:
         self.output_folder = output_folder
         (w,h) = self.frames[0].shape
         self.frames_output = np.zeros(shape=(t,w,h), dtype=np.uint8)
-        
+
         i = 0
         while(series[i] == 0):
             i = i+1
         if(i<t):
             self.frames_output[i] = self.frames[i] # The first frame is initialized
-        
+
         # get the number of cells, assume it's constant
         regions = skimage.measure.regionprops(self.frames_output[i], intensity_image=self.frames_output[i])
         self.N = len(regions)
-        
+
         self.regions_0 = []
         self.regions_1 = []
-        
+
     def get_distance_cost(self, t0, t1, n0, n1):
         #regions_0 = skimage.measure.regionprops(self.frames[t0], intensity_image=self.frames[t0])
         minr, minc, maxr, maxc = self.regions_0[n0-1].bbox
@@ -99,9 +99,9 @@ class TIMING_Cell_Tracker:
             dist = scipy.spatial.distance.cdist(X_t0_n0, X_t1_n1)
             return (np.amin(dist))
 
-        
+
     def get_death_cost(self, t0, t1, n0, n1):
-        print(" ... ")    
+        print(" ... ")
 
 
     def get_edge_weight(self, t0, t1, n0, n1):
@@ -132,7 +132,7 @@ class TIMING_Cell_Tracker:
                 temp=[]
                 for i in range(1,n1+1):
                     temp.append(item[i-1]+'_'+str(i))
-                candidate.append(temp)        
+                candidate.append(temp)
 
         return candidate
 
@@ -142,16 +142,16 @@ class TIMING_Cell_Tracker:
         #N1 = self.frames[t1].max()
         self.regions_0 = skimage.measure.regionprops(self.frames_output[t0], intensity_image=self.frames_output[t0])
         N0 = len(self.regions_0)
-        
+
         self.regions_1 = skimage.measure.regionprops(self.frames[t1], intensity_image=self.frames[t1])
         N1 = len(self.regions_1)
-        
+
         if N0 == 0 or N1 == 0:
             return []
-        
+
         #if N0 == 1 and N2 == 1:
         #    return ['1_1',]
-        
+
         # calculate features
         edges = {}
         for i in range(1,N0+1):
@@ -182,24 +182,24 @@ class TIMING_Cell_Tracker:
         transition_mat_i = {}
         #N = len(mapping_temp)
         N = self.N
-        
+
         for kk in range(1, N+1):
             transition_mat_i[str(kk)] = kk
-        
+
         while(i < self.t-1):
             while(self.series[i] == 0):
                 i = i+1
-            
+
             j = i+1
-            
+
             while(self.series[j] == 0):
                 j = j + 1
-            
+
 
             mapping_temp = self.approx_intprog(i,j)
-            
 
-            
+
+
             for link in mapping_temp:
                 #self.frames_output[j][self.frames[j] == int(link[2])] = int(link[0])
                 # update label
@@ -208,16 +208,16 @@ class TIMING_Cell_Tracker:
             transition_mat_i_temp = {}
             for link in mapping_temp:
                 transition_mat_i_temp[link[2]] = int(transition_mat_i[link[0]])
-            transition_mat_i = transition_mat_i_temp 
-                
+            transition_mat_i = transition_mat_i_temp
+
             i = j
-          
-                
+
+
     def write_track_img(self):
         for t in range(0, self.t):
             fname = self.output_folder.split('\\')[-1] + '_t' + str(t+1) + '.tif'
             full_fname = self.output_folder + '\\' + fname
             io.imsave(full_fname, self.frames_output[t])
-    
+
     def calculate_features():
         print(" ... ")

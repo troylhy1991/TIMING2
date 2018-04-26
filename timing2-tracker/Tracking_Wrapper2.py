@@ -27,7 +27,7 @@ def TIMING_Tracker2(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Data
         f.close()
 
         for ID in valid_nanowell_ID:
-
+            # print("NANOWELL ID is: " + str(ID))
             f = open(os.path.join(Data_DIR, Dataset_Name, Dataset_Output, block,'meta\\cell_hist\\imgNo'+str(ID)+'bg.txt'))
             ET_count = f.readlines()
             f.close()
@@ -35,7 +35,7 @@ def TIMING_Tracker2(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Data
             T_count = int(ET_count[1].rstrip('\n').split('\t')[0])
 
             if E_count != 0:
-
+                # print("E Number is:" + str(E_count))
                 folder_name = 'imgNo'+str(ID)+'CH1bg'
 
                 f = open(os.path.join(Data_DIR, Dataset_Name, Dataset_Output, block,'meta\\cell_count\\imgNo'+str(ID)+'CH1bg.txt'))
@@ -52,10 +52,10 @@ def TIMING_Tracker2(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Data
                 temp6 = E_count
 
                 parameters.append([temp1, temp2, temp3, temp4, temp5, temp6])
-                # track_worker(temp1, temp2, temp3, temp4, temp5)
+                # track_worker2(temp1, temp2, temp3, temp4, temp5, temp6)
 
             if T_count != 0:
-
+                # print("T Number is:" + str(T_count))
                 folder_name = 'imgNo'+str(ID)+'CH2bg'
 
                 f = open(os.path.join(Data_DIR, Dataset_Name, Dataset_Output, block,'meta\\cell_count\\imgNo'+str(ID)+'CH2bg.txt'))
@@ -72,7 +72,7 @@ def TIMING_Tracker2(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Data
                 temp6 = T_count
 
                 parameters.append([temp1, temp2, temp3, temp4, temp5, temp6])
-                # track_worker(temp1, temp2, temp3, temp4, temp5)
+                # track_worker2(temp1, temp2, temp3, temp4, temp5, temp6)
     #t1 = time.time()
 
     # Start the parallel threads

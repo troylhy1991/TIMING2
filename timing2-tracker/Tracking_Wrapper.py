@@ -51,6 +51,7 @@ def TIMING_Tracker(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Datas
                 temp5 = E_series
 
                 parameters.append([temp1, temp2, temp3, temp4, temp5])
+                # track_worker(temp1, temp2, temp3, temp4, temp5)
 
             if T_count != 0:
 
@@ -69,7 +70,7 @@ def TIMING_Tracker(Data_DIR, Dataset_Name, Dataset_Output, Dataset_Blocks, Datas
                 temp5 = T_series
 
                 parameters.append([temp1, temp2, temp3, temp4, temp5])
-
+                # track_worker(temp1, temp2, temp3, temp4, temp5)
     #t1 = time.time()
 
     # Start the parallel threads

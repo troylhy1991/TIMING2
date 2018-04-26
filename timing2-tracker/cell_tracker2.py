@@ -21,6 +21,7 @@ class TIMING_Cell_Tracker2:
         self.output_folder = output_folder
         (w,h) = self.frames[0].shape
         self.frames_output = np.zeros(shape=(t,w,h), dtype=np.uint8)
+        self.frames_output[0] = self.frames[0]
 
 
         self.regions_0 = []
@@ -35,7 +36,7 @@ class TIMING_Cell_Tracker2:
             
         if self.cell_count > 1:
             for t in range(self.t-1):
-                if series[t] > 0:
+                if self.series[t] > 0:
                     self.LAP(t)
             self.write_track_img()
         
@@ -83,14 +84,14 @@ class TIMING_Cell_Tracker2:
         ASSO = self.PAS(CAM)
         
         
-        ### STEP-3 UPDATE frames_output
+        ### STEP-3 UPDATE frames_output       
         for i in range(self.cell_count):
-            self.output_frames[t+1][self.frames[t+1] == ASSO[i]] = i + 1
+            self.frames_output[t+1][self.frames[t+1] == (ASSO[i]+1)] = i + 1
     
     
     def get_detected_cell_current(self, t, N):
         try:
-            self.region_0 = skimage.measure.regionprops(self.frames_output[t], intensity_image=self.frames_output[t])  
+            self.regions_0 = skimage.measure.regionprops(self.frames_output[t], intensity_image=self.frames_output[t])  
             minr, minc, maxr, maxc = self.regions_0[N-1].bbox
             xc = (minc+maxc)/2.0
             yc = (minr+maxr)/2.0
@@ -110,7 +111,7 @@ class TIMING_Cell_Tracker2:
         
     def get_detected_cell_next(self, t, N):
         try:
-            self.region_1 = skimage.measure.regionprops(self.frames[t], intensity_image=self.frames[t])
+            self.regions_1 = skimage.measure.regionprops(self.frames[t], intensity_image=self.frames[t])
             minr, minc, maxr, maxc = self.regions_1[N-1].bbox
             xc = (minc+maxc)/2.0
             yc = (minr+maxr)/2.0
@@ -130,7 +131,7 @@ class TIMING_Cell_Tracker2:
         
     def get_current_state(self, t):
         state_0 = []
-        for N in range(self.cell_count):
+        for N in range(1, self.cell_count+1):
             temp = self.get_detected_cell_current(t,N)
             state_0.append(temp)
             
@@ -140,17 +141,17 @@ class TIMING_Cell_Tracker2:
     def get_current_speed(self, t):
         speed_0 = []
         if t == 0:
-            for N in range(self.cell_count):
+            for N in range(1, self.cell_count+1):
                 temp = [0,0]
                 speed_0.append(temp)
             
         if t > 0:   ##### This could result problems
-            for N in range(self.cell_count):
+            for N in range(1, self.cell_count+1):
                 temp1 = self.get_detected_cell_current(t,N)
                 temp0 = self.get_detected_cell_current(t-1,N)
                 if temp1[2] > 0 and temp0[2] > 0:
-                    vx = temp1[0] - temp1[0]
-                    vy = temp1[1] - temp1[1]
+                    vx = temp1[0] - temp0[0]
+                    vy = temp1[1] - temp0[1]
                 else:
                     vx = 0
                     vy = 0
@@ -161,8 +162,8 @@ class TIMING_Cell_Tracker2:
         
     def get_next_state(self, t):
         state_1 = []
-        for N in range(self.cell_count):
-            temp = self.get_detected_cell_next(t, N)
+        for N in range(1, self.cell_count+1):
+            temp = self.get_detected_cell_next(t+1, N)    # a bug fixed
             state_1.append(temp)
         
         return state_1        
