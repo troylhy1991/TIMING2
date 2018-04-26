@@ -35,9 +35,7 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
 
  * GPU-accelerated Cell segmentation module
     
-(3) New Modules, TIMING2 has several new modules which is not included in TIMING,
-    
- * Cell death detection without fluorescent cell death marker, using convolutional neural networks based image classifier, TIMING2 is able to detect cell death with 87% accuracy by looking at phase contrast channel;
+(3) New Modules, TIMING2 has new module which is not included in TIMING,
     
  * TIMING2-board, a visualization and re-editing system
  
