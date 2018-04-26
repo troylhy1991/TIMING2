@@ -34,7 +34,7 @@ def TIMING_Preprocess_Stack(TIMING_II_HOME, Data_Raw_DIR, Data_DIR, Dataset_Name
     root_path = Data_Raw_DIR + '\\'
     save_root_path = Data_DIR + '\\'
     data_id = Dataset_Name
-    out_path = save_root_path + data_id + '\\IN\\'
+    out_path = save_root_path + data_id + '\\' + Dataset_Input +'\\'
     #range_blocks = range(1,len(Dataset_Blocks)+1)
     range_blocks = [int(x[1:4]) for x in Dataset_Blocks]
 
@@ -92,7 +92,7 @@ def TIMING_Preprocess_Unmix(domi, leak, unmix_ratio, TIMING_II_HOME, Data_Raw_DI
     root_path = Data_Raw_DIR + '\\'
     save_root_path = Data_DIR + '\\'
     data_id = Dataset_Name
-    out_path = save_root_path + data_id + '\\IN\\'
+    out_path = save_root_path + data_id + '\\' + Dataset_Input +'\\'
     #range_blocks = range(1,len(Dataset_Blocks)+1)
     range_blocks = [int(x[1:4]) for x in Dataset_Blocks]
 
@@ -138,7 +138,7 @@ def TIMING_Preprocess_BackgroundSubtract(bg_param, TIMING_II_HOME, Data_Raw_DIR,
     root_path = Data_Raw_DIR + '\\'
     save_root_path = Data_DIR + '\\'
     data_id = Dataset_Name
-    out_path = save_root_path + data_id + '\\IN\\'
+    out_path = save_root_path + data_id + '\\' + Dataset_Input +'\\'
     #range_blocks = range(1,len(Dataset_Blocks)+1)
     range_blocks = [int(x[1:4]) for x in Dataset_Blocks]
 
@@ -192,7 +192,7 @@ def TIMING_Preprocess_Enhance(min_pixel_value, max_pixel_value,TIMING_II_HOME, D
     root_path = Data_Raw_DIR + '\\'
     save_root_path = Data_DIR + '\\'
     data_id = Dataset_Name
-    out_path = save_root_path + data_id + '\\IN\\'
+    out_path = save_root_path + data_id + '\\' + Dataset_Input +'\\'
     #range_blocks = range(1,len(Dataset_Blocks)+1)
     range_blocks = [int(x[1:4]) for x in Dataset_Blocks]
 

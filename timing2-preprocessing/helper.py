@@ -126,9 +126,9 @@ def SaveFiles( data_path, save_root_path, data_id, range_blocks, out_path, stack
                     #print "In Block (1.stack): "+str(b)+", ch: "+ch
                     time_list = []
                     for filename in channel_list:
-                        temp = filename.split("c") 
+                        temp = filename.split("_ORG") 
                         temp = temp[0]
-                        temp = temp[-num_of_time_decimals:]             # get the 3 characters before _w
+                        temp = temp[-num_of_time_decimals-2:-2]             # get the 3 characters before _w
                         #print temp
                         if re.search(r'\d+', temp):
                           time_list.append(int(re.search(r'\d+', temp).group()))
@@ -141,7 +141,7 @@ def SaveFiles( data_path, save_root_path, data_id, range_blocks, out_path, stack
                     # sort the channel list:
                     channel_list = [channel_list[i] for i in index]
                     fp = open(os.path.join(file_list_path,'inputfnames_'+block_dir+ '_' +channel_naming_dict[ch]+'.txt'),'w')
-                    print(os.path.join(file_list_path,'inputfnames_'+block_dir+ '_' +channel_naming_dict[ch]+'.txt'))
+                    # print(os.path.join(file_list_path,'inputfnames_'+block_dir+ '_' +channel_naming_dict[ch]+'.txt'))
                     for filename in channel_list:
                         fp.write(os.path.join(data_path,filename))
                         #print filename_list_txt[(ch,b)]
