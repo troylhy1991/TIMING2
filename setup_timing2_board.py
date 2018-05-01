@@ -6,7 +6,7 @@ import os
 command = 'conda install --yes -c anaconda numpy'
 os.system(command)
 
-command = 'conda install --yes -c anaconda pyqt=4.11.4'
+command = 'conda install --yes -c anaconda pyqt=4.10.4'
 os.system(command)
 
 command = 'conda install --yes -c anaconda scikit-learn=0.18.1'
