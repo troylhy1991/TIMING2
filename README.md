@@ -89,6 +89,10 @@ TIMING2 is all about the updates and improvements of TIMING pipeline, the softwa
  
  (3) Visualize the results; Open a new Anaconda Prompt, activate the visualization and editing environment by typing activate TIMING2-
 board, change directory to typing cd C:\\Users\\TIMING2\\timing2-viewer\\2.0\\. Start the visualization system typing python TIMING_Main.py, and you will see a small widget window popping up.
- 
+
+# Sample Results:
+
+Sample Results using CAR T-cell (Effector) and A375 -dCD19 (Melanoma Target) can be found here: [Nanowell Repository](http://htmlpreview.github.io/?https://github.com/troylhy1991/TIMING2/blob/master/appendix/demo3.html)
+
 # Contact:
  Hengyang Lu: hlu9@uh.edu
