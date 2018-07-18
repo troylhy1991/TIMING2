@@ -712,6 +712,8 @@ def main():
 	t = 1
 	t_span = 72
 	tag = Nanowell_Tag()
+	tag.E_Num=2
+	tag.T_Num=0
 	cube = TIMING_Nanowell(path, BID, Well_ID, t, t_span, tag)
 	sys.exit(app.exec_())
 
