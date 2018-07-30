@@ -146,6 +146,25 @@ def No2RC(x, size):
 
     return [R,C]
 
+
+def load_nanowells(a_center_fname):
+    '''
+    Update Row and Column Index to match physical location
+    '''
+    f = open(a_center_fname)
+    lines = f.readlines()
+    f.close()
+
+    nanowells = []
+
+    for line in lines:
+        line = line.rstrip().split('\t')
+        line = [float(i) for i in line]
+        nanowells.append(line)
+
+    return nanowells
+
+
 def generate_combined_feat_table(Data_DIR, Dataset_Name, Dataset_Output, Blocks, T):
     # read in the cell count of all nanowells in the Block and generate the estimated Effector& Target cell count
     print("......")
@@ -189,9 +208,12 @@ def generate_combined_feat_table(Data_DIR, Dataset_Name, Dataset_Output, Blocks,
             line_counter = 0
             flag_E = 0
 
-
+            sorted_nanowells = load_nanowells(Dataset_Output_Path+ BID + '/meta/a_centers_clean_sorted.txt') ### row column index
+            
             block = int(BID[1:4])
-            [R,C] = No2RC(well_ID, 6)
+            
+            [R,C] = No2RC(int(sorted_nanowells[well_ID-1][4]), 6) ### row column index update
+            
             if int(E_count) == 0:
                 flag_E = 1
                 x=np.ones((5,T),dtype=np.int)*(-1000)
