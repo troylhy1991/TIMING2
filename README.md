@@ -96,3 +96,6 @@ Sample Results using CAR T-cell (Effector) and A375 -dCD19 (Melanoma Target) can
 
 # Contact:
  Hengyang Lu: hlu9@uh.edu
+ 
+# Licence:
+ This code is free for non-commerical use only
